@@ -1,18 +1,34 @@
 'use strict'
 
+const jonas ={
+    fristName : 'john Smith',
+    mass : 92,
+    height : 1.95,
+    calcBMI : function(){
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    }
+};
 
-const bills = [125,555,44];
+const marks = {
+    fristName: 'Mark Miller',
+    mass : 78,
+    height : 1.69,
+    calcBMI : function(){
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    }
+};
 
-const calTip = function(bill){
-        const tipcalc = bill >= 50 && bill <= 300 ? bill*0.15 : bill *0.20;
-        return tipcalc;
+
+jonas.calcBMI();
+marks.calcBMI();
+
+
+if(jonas.bmi  > marks.bmi){
+    console.log(`Jonas's BMI(${jonas.bmi}) is higher than Mark's (${marks.bmi})`);
+}else{
+    console.log(`Jonas's BMI(${jonas.bmi}) is lower than Mark's (${marks.bmi})`);
+
 }
 
-const tips = [calTip(bills[0]),calTip(bills[1]),calTip(bills[2])];
-
-const total = [tips[0]+bills[0],tips[1]+bills[1],tips[2]+bills[2]];
-
-console.log("___________calculated tips_________________");
-console.log(tips);
-console.log("___________calculated Bills___________");
-console.log(total);
